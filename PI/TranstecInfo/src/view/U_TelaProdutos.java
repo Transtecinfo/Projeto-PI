@@ -62,7 +62,7 @@ public class U_TelaProdutos extends javax.swing.JFrame {
 
         cmbOpcoes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         cmbOpcoes.setMaximumRowCount(3);
-        cmbOpcoes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione....", "Cadastrar", "Listar" }));
+        cmbOpcoes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione....", "Listar e Doar" }));
         cmbOpcoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbOpcoesActionPerformed(evt);
@@ -183,42 +183,30 @@ public class U_TelaProdutos extends javax.swing.JFrame {
         
         int p2 = cmbOpcoes.getSelectedIndex();
 
+
+        
         if (p1 == 1 && p2 == 1) {
-            U_FrmAlimento tela = new U_FrmAlimento();
-            jdpTela.add(tela);
-            tela.setVisible(true);
-        }
-        if (p1 == 1 && p2 == 2) {
             U_ListAlimento tela = new U_ListAlimento(jdpTela);
             jdpTela.add(tela);
             tela.setVisible(true);
         }
+
+        
         if (p1 == 2 && p2 == 1) {
-            U_FrmLimpeza tela = new U_FrmLimpeza();
-            jdpTela.add(tela);
-            tela.setVisible(true);
-        }
-        if (p1 == 2 && p2 == 2) {
             U_ListLimpeza tela = new U_ListLimpeza(jdpTela);
             jdpTela.add(tela);
             tela.setVisible(true);
         }
+
+        
         if (p1 == 3 && p2 == 1) {
-            U_FrmHigiene tela = new U_FrmHigiene();
-            jdpTela.add(tela);
-            tela.setVisible(true);
-        }
-        if (p1 == 3 && p2 == 2) {
             U_ListHigiene tela = new U_ListHigiene(jdpTela);
             jdpTela.add(tela);
             tela.setVisible(true);
         }
+
+        
         if (p1 == 4 && p2 == 1) {
-            U_FrmVestuario tela = new U_FrmVestuario();
-            jdpTela.add(tela);
-            tela.setVisible(true);
-        }
-        if (p1 == 4 && p2 == 2) {
             U_ListVestuario tela = new U_ListVestuario(jdpTela);
             tela.setVisible(true);
         }

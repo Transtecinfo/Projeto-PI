@@ -22,6 +22,7 @@ public class ListUsuario extends javax.swing.JInternalFrame {
      
     public ListUsuario(JDesktopPane jdpPainel) {
         initComponents();
+        carregarTabela();
         this.jdpTelaInicial = jdpPainel;
     }
     
@@ -94,16 +95,16 @@ public class ListUsuario extends javax.swing.JInternalFrame {
         jdpPainel.setLayout(jdpPainelLayout);
         jdpPainelLayout.setHorizontalGroup(
             jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jdpPainelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdpPainelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(887, Short.MAX_VALUE)
                 .addComponent(btnEditar)
                 .addGap(18, 18, 18)
                 .addComponent(btnExcluir)
                 .addGap(19, 19, 19))
+            .addGroup(jdpPainelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 839, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jdpPainelLayout.setVerticalGroup(
             jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

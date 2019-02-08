@@ -84,7 +84,7 @@ public class TelaUsuarios_adm extends javax.swing.JFrame {
                     .addComponent(btnLista)
                     .addComponent(btnCadastro)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(140, 140, 140))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdpTelaLayout.createSequentialGroup()

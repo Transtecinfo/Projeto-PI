@@ -28,7 +28,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
     ImageIcon icon = new ImageIcon("C:\\Users\\181720019\\Downloads/logotrans.png");
     JLabel label = new JLabel(icon);
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -95,8 +94,8 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSenha)
-                            .addComponent(txtLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                            .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                            .addComponent(txtLogin))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -110,14 +109,14 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -154,25 +153,25 @@ public class TelaLogin extends javax.swing.JFrame {
         String senha = txtSenha.getText();
         String login = txtLogin.getText();
 
-        if (login.equals("admin") && senha.equals("1234")) {
+        if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("1234")) {
             TelaAdmin2 tela = new TelaAdmin2();
             tela.setVisible(true);
             this.dispose();
         } else {
-            limparLog();
+            Usuario user = new Usuario();
+            user.setLogin(login);
+            user.setSenha(senha);
+            if (UsuarioDAO.logar(user)) {
+                TelaUser tela = new TelaUser();
+                tela.setVisible(true);
+                this.dispose();
+            } else {
+                limparLog();
+            }
+
         }
 
-        if (login.equals("user") && senha.equals("1234")) {
-            TelaUser tela = new TelaUser();
-            tela.setVisible(true);
-            this.dispose();
-        } else {
-            limparLog();
-        }
 
-        
-        
-        
     }//GEN-LAST:event_btnOkActionPerformed
 
     private void btnOkKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnOkKeyPressed
@@ -182,7 +181,6 @@ public class TelaLogin extends javax.swing.JFrame {
         txtLogin.setText(txtLogin.getText());
         txtSenha.setText("");
     }
-
 
     /**
      * @param args the command line arguments
@@ -219,8 +217,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
     }
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOk;

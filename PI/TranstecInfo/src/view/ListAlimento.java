@@ -23,6 +23,7 @@ public class ListAlimento extends javax.swing.JInternalFrame {
     public ListAlimento(JDesktopPane jdpPainel) {
         initComponents();
         this.jdpTelaInicial = jdpPainel;
+        carregarTabela();
     }
     
     public void carregarTabela(){

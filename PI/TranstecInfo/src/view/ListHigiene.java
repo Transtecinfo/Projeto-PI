@@ -24,6 +24,7 @@ public class ListHigiene extends javax.swing.JInternalFrame {
     public ListHigiene(JDesktopPane jdpPainel) {
         initComponents();
         this.jdpTelaInicial = jdpPainel;
+        carregarTabela();
     }
     
     public void carregarTabela(){

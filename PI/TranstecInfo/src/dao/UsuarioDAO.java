@@ -17,21 +17,45 @@ import model.Usuario;
  */
 public class UsuarioDAO {
 
+    public static boolean logar(Usuario usuario) {
+        String sql = " SELECT COUNT(codigo) "
+                + " FROM usuarios "
+                + " WHERE login = '" + usuario.getLogin() + "' AND "
+                + " senha = '" + usuario.getSenha() + "' ";
+        ResultSet rs = Conexao.consultar(sql);
+        if (rs != null) {
+            try {
+                rs.next();
+                if (rs.getInt(1) == 0) {
+                    return false;
+                } else {
+                    return true;
+                }
+
+            } catch (Exception e) {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+    }
+
     public static void inserir(Usuario usuario) {
-        String sql = "INSERT  INTO usuarios "
-                + "(nome, login, senha) VALUES ( "
+        String sql = " INSERT  INTO usuarios "
+                + "( nome, login, senha ) VALUES ( "
                 + " '" + usuario.getNome() + "', "
-                + " '" + usuario.getSenha() + "', "
                 + " '" + usuario.getLogin()+ "', "
+                + " '" + usuario.getSenha()+ "' "
                 + " ) ";
         Conexao.executar(sql);
     }
 
     public static void editar(Usuario usuario) {
-        String sql = "UPDATE SET usuarios "
+        String sql = " UPDATE usuarios SET "
                 + " nome     = '" + usuario.getNome() + "', "
-                + " telefone = '" + usuario.getSenha() + "', "
-                + " telefone = '" + usuario.getLogin() + "', "
+                + " senha = '" + usuario.getSenha() + "', "
+                + " login = '" + usuario.getLogin() + "', "
                 + " WHERE codigo = " + usuario.getCodigo();
         Conexao.executar(sql);
     }

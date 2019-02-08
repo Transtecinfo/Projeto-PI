@@ -18,15 +18,16 @@ import model.Higiene;
 public class HigieneDAO {
     
      public static void inserir(Higiene higiene) {
-        String sql = "INSERT  INTO higienes "
-                + "(nome, descricao, situacao, minimo, medio, "
-                + " maximo, quantidade) VALUES ( "
+        String sql = " INSERT  INTO higienes "
+                + "( nome, descricao, situacao, minimo, medio, "
+                + " maximo, quantidade ) VALUES ( "
                 + " '" + higiene.getNome() + "', "
-                + " '" + higiene.getDescricao()+ "', "
-                + " '" + higiene.getSituacao()+ "', "
-                + "  " + higiene.getMinimo()+ ", "
-                + "  " + higiene.getMedio()+ ", "
-                + "  " + higiene.getMaximo() + ", "
+                + " '" + higiene.getDescricao() + "', "
+                + " '" + higiene.getSituacao() + "', "
+                + " " + higiene.getMinimo() + ", "
+                + " " + higiene.getMedio() + " , "
+                + " " + higiene.getMaximo() + ", "
+                + " " + higiene.getQuantidade()+ " "
                 + " ) ";
         Conexao.executar(sql);
     }
@@ -39,7 +40,7 @@ public class HigieneDAO {
                 + " minimo       =  " + higiene.getMinimo()+ ", "
                 + " medio        =  " + higiene.getMedio()+ ", "
                 + " maximo       =  " + higiene.getMaximo() + ", "
-                + " quantidade   = '" + higiene.getQuantidade()+ "', "
+                + " quantidade   =   " + higiene.getQuantidade()+ "', "
                 + " WHERE codigo = " + higiene.getCodigo();
         Conexao.executar(sql);
     }

@@ -72,15 +72,16 @@ public class TelaAdmin2 extends javax.swing.JFrame {
         jdpPainelLayout.setHorizontalGroup(
             jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jdpPainelLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
                 .addGroup(jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCont_P, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdm_Us, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jdpPainelLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jLabel1)
-                .addGap(50, 410, Short.MAX_VALUE))
+                    .addGroup(jdpPainelLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCont_P, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAdm_Us, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jdpPainelLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(jLabel1)))
+                .addContainerGap(556, Short.MAX_VALUE))
         );
         jdpPainelLayout.setVerticalGroup(
             jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,7 +92,7 @@ public class TelaAdmin2 extends javax.swing.JFrame {
                 .addComponent(btnAdm_Us)
                 .addGap(45, 45, 45)
                 .addComponent(btnCont_P)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Inicial");

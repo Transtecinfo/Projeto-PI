@@ -18,15 +18,16 @@ import model.Vestuario;
 public class VestuarioDAO {
     
     public static void inserir(Vestuario vestuario) {
-        String sql = "INSERT  INTO vestuarios "
-                + "(nome, descricao, situacao, minimo, medio, "
-                + " maximo, quantidade) VALUES ( "
+        String sql = "INSERT  INTO vestuario "
+                + "( nome, descricao, situacao, minimo, medio, "
+                + " maximo, quantidade ) VALUES ( "
                 + " '" + vestuario.getNome() + "', "
-                + " '" + vestuario.getDescricao()+ "', "
-                + " '" + vestuario.getSituacao()+ "', "
-                + "  " + vestuario.getMinimo()+ ", "
-                + "  " + vestuario.getMedio()+ ", "
-                + "  " + vestuario.getMaximo() + ", "
+                + " '" + vestuario.getDescricao() + "', "
+                + " '" + vestuario.getSituacao() + "', "
+                + " " + vestuario.getMinimo() + ", "
+                + " " + vestuario.getMedio() + " , "
+                + " " + vestuario.getMaximo() + ", "
+                + " " + vestuario.getQuantidade()+ " "
                 + " ) ";
         Conexao.executar(sql);
     }
@@ -39,7 +40,7 @@ public class VestuarioDAO {
                 + " minimo       =  " + vestuario.getMinimo()+ ", "
                 + " medio        =  " + vestuario.getMedio()+ ", "
                 + " maximo       =  " + vestuario.getMaximo() + ", "
-                + " quantidade   = '" + vestuario.getQuantidade()+ "', "
+                + " quantidade   = " + vestuario.getQuantidade()+ "', "
                 + " WHERE codigo = " + vestuario.getCodigo();
         Conexao.executar(sql);
     }

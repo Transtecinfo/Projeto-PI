@@ -19,28 +19,29 @@ import model.Alimento;
 public class AlimentoDAO {
     
    public static void inserir(Alimento alimento) {
-        String sql = "INSERT  INTO alimentos "
-                + "(nome, descricao, situacao, minimo, medio, "
-                + " maximo, quantidade) VALUES ( "
+        String sql = " INSERT  INTO alimentos "
+                + "( nome, descricao, situacao, minimo, medio, "
+                + " maximo, quantidade ) VALUES ( "
                 + " '" + alimento.getNome() + "', "
-                + " '" + alimento.getDescricao()+ "', "
-                + " '" + alimento.getSituacao()+ "', "
-                + "  " + alimento.getMinimo()+ ", "
-                + "  " + alimento.getMedio()+ ", "
-                + "  " + alimento.getMaximo() + ", "
+                + " '" + alimento.getDescricao() + "', "
+                + " '" + alimento.getSituacao() + "', "
+                + " " + alimento.getMinimo() + ", "
+                + " " + alimento.getMedio() + " , "
+                + " " + alimento.getMaximo() + ", "
+                + " " + alimento.getQuantidade()+ " "
                 + " ) ";
         Conexao.executar(sql);
-    }
-    
+   }
+        
    public static void editar(Alimento alimento) {
-        String sql = "UPDATE SET alimentos "
+        String sql = " UPDATE SET alimentos "
                 + " nome         = '" + alimento.getNome() + "', "
                 + " descricao    = '" + alimento.getDescricao()+ "', "
                 + " situacao     = '" + alimento.getSituacao()+ "', "
                 + " minimo       =  " + alimento.getMinimo()+ ", "
                 + " medio        =  " + alimento.getMedio()+ ", "
                 + " maximo       =  " + alimento.getMaximo() + ", "
-                + " quantidade   = '" + alimento.getQuantidade()+ "', "
+                + " quantidade   = " + alimento.getQuantidade()+ ", "
                 + " WHERE codigo = " + alimento.getCodigo();
         Conexao.executar(sql);
     }

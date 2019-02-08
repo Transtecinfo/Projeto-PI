@@ -25,7 +25,7 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
         usuario = null;
     }
     
-    public FrmUsuario(int codigo) {
+    public FrmUsuario(int codigo, ListUsuario telaListUsuario) {
         initComponents();
         lblCodigo.setVisible(true);
         lblCodigoValor.setVisible(true);
@@ -57,15 +57,18 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
         btnSalvar = new javax.swing.JButton();
         txtNome = new javax.swing.JTextField();
         txtLogin = new javax.swing.JTextField();
-        txtSenha = new javax.swing.JTextField();
         lblCodigo = new javax.swing.JLabel();
         lblCodigoValor = new javax.swing.JLabel();
         btnLimpar = new javax.swing.JButton();
+        txtSenha = new javax.swing.JPasswordField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+
+        jdpPainel.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("Cadastro de usuários");
@@ -105,6 +108,10 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
                 .addGap(107, 107, 107)
                 .addGroup(jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jdpPainelLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel5)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jdpPainelLayout.createSequentialGroup()
                         .addGroup(jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
@@ -113,17 +120,14 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
                         .addGroup(jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNome)
                             .addComponent(txtLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                            .addComponent(txtSenha)))
-                    .addGroup(jdpPainelLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel5)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtSenha))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdpPainelLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(lblCodigo)
                 .addGap(18, 18, 18)
                 .addComponent(lblCodigoValor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
                 .addComponent(btnLimpar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSalvar)
@@ -153,7 +157,7 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
                         .addGroup(jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                         .addGroup(jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSalvar)
                             .addComponent(btnLimpar))))
@@ -165,15 +169,13 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(28, 28, 28)
                 .addComponent(jdpPainel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jdpPainel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jdpPainel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -192,7 +194,7 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
                nova = true;
                usuario = new Usuario();
            }
-            usuario.setNome(nome);
+       usuario.setNome(nome);
        usuario.setLogin(login);
        usuario.setSenha(senha);
  
@@ -204,6 +206,8 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
            this.dispose();
        }
        }
+       
+       limparFormulario();
       
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -228,6 +232,6 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCodigoValor;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtSenha;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

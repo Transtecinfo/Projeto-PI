@@ -29,8 +29,25 @@ public class Alimento {
     }
 
     public Alimento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
+
+    public static String getBOA() {
+        return BOA;
+    }
+
+    public static String getRUIM() {
+        return RUIM;
+    }
+
+    public static String getOTIMA() {
+        return OTIMA;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    
 
     public int getCodigo() {
         return codigo;
@@ -52,9 +69,7 @@ public class Alimento {
         return descricao;
     }
     
-    public void setDescricao(){
-        this.descricao = descricao;
-    }
+   
 
     public double getQuantidade() {
         return quantidade;
@@ -96,9 +111,7 @@ public class Alimento {
         this.situacao = situacao;
     }
 
-    public void setDescricao(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
     
 }

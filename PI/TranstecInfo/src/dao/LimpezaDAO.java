@@ -18,15 +18,16 @@ import model.Limpeza;
 public class LimpezaDAO {
     
     public static void inserir(Limpeza limpeza) {
-        String sql = "INSERT  INTO limpezas "
-                + "(nome, descricao, situacao, minimo, medio, "
-                + " maximo, quantidade) VALUES ( "
+        String sql = " INSERT  INTO limpezas "
+                + "( nome, descricao, situacao, minimo, medio, "
+                + " maximo, quantidade ) VALUES ( "
                 + " '" + limpeza.getNome() + "', "
-                + " '" + limpeza.getDescricao()+ "', "
-                + " '" + limpeza.getSituacao()+ "', "
-                + "  " + limpeza.getMinimo()+ ", "
-                + "  " + limpeza.getMedio()+ ", "
-                + "  " + limpeza.getMaximo() + ", "
+                + " '" + limpeza.getDescricao() + "', "
+                + " '" + limpeza.getSituacao() + "', "
+                + " " + limpeza.getMinimo() + ", "
+                + " " + limpeza.getMedio() + " , "
+                + " " + limpeza.getMaximo() + ", "
+                + " " + limpeza.getQuantidade()+ " "
                 + " ) ";
         Conexao.executar(sql);
     }
@@ -39,7 +40,7 @@ public class LimpezaDAO {
                 + " minimo       =  " + limpeza.getMinimo()+ ", "
                 + " medio        =  " + limpeza.getMedio()+ ", "
                 + " maximo       =  " + limpeza.getMaximo() + ", "
-                + " quantidade   = '" + limpeza.getQuantidade()+ "', "
+                + " quantidade   = " + limpeza.getQuantidade()+ ", "
                 + " WHERE codigo = " + limpeza.getCodigo();
         Conexao.executar(sql);
     }

@@ -90,6 +90,7 @@ public class TelaUser extends javax.swing.JFrame {
 
         jMenu1.setText("Inicial");
 
+        MenuAdmTrocar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
         MenuAdmTrocar.setText("Trocar usuário");
         MenuAdmTrocar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +99,7 @@ public class TelaUser extends javax.swing.JFrame {
         });
         jMenu1.add(MenuAdmTrocar);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem1.setText("Sair");
         jMenu1.add(jMenuItem1);
 
@@ -122,6 +124,7 @@ public class TelaUser extends javax.swing.JFrame {
     private void btnCont_PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCont_PActionPerformed
         U_TelaProdutos tela = new U_TelaProdutos();
         tela.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnCont_PActionPerformed
 
     private void MenuAdmTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAdmTrocarActionPerformed

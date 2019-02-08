@@ -24,6 +24,7 @@ public class ListVestuario extends javax.swing.JInternalFrame {
     public ListVestuario(JDesktopPane jdpPainel) {
         initComponents();
         this.jdpTelaInicial = jdpPainel;
+        carregarTabela();
     }
     
     public void carregarTabela(){
